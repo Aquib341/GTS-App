@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+
+:root {
+    /* Warm Brown, Mauve & Peach Palette */
+    --primary: #493129; /* Dark Brown - Main Text & Sidebar */
+    --primary-light: #6d4c41; /* Lighter Brown for borders/hover */
+    --secondary: #8b597b; /* Medium Purple/Mauve - Accents/Headers */
+    --accent: #efa3a0; /* Light Pink/Blush - Highlights */
+    --accent-hover: #d08b88;
+    --background: #ffdec0; /* Very Light Peach */
+    --surface: #ffffff; /* White */
+    --surface-transparent: rgba(255, 255, 255, 0.9);
+    --text-main: #493129; /* Dark Brown for high contrast */
+    --text-muted: #8b597b; /* Mauve for subtitles */
+    --border: #efa3a0; /* Blush border */
+    --shadow-soft: 0 4px 6px -1px rgba(73, 49, 41, 0.1), 0 2px 4px -1px rgba(73, 49, 41, 0.05);
+    --shadow-hover: 0 10px 15px -3px rgba(73, 49, 41, 0.15), 0 4px 6px -2px rgba(73, 49, 41, 0.1);
+}
+
+html, body, [class*="css"] {
+    font-family: 'Lato', sans-serif;
+    color: var(--text-main);
+    /* Soft Peach to White Gradient */
+    background: linear-gradient(135deg, var(--background) 0%, #ffffff 100%) !important;
+    background-attachment: fixed !important;
+}
+
+/* Ensure Streamlit main container gets the gradient */
+.stApp {
+    background: linear-gradient(135deg, var(--background) 0%, #ffffff 100%);
+    background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* --- Sidebar --- */
+section[data-testid="stSidebar"] {
+    background-color: var(--primary); /* Dark Brown */
+    /* Subtle Geometric Texture */
+    background-image: url("https://www.transparenttextures.com/patterns/black-scales.png"); 
+    border-right: 1px solid var(--primary-light);
+}
+
+/* Sidebar Text Contrast */
+section[data-testid="stSidebar"] p, 
+section[data-testid="stSidebar"] span, 
+section[data-testid="stSidebar"] label {
+    color: #ffffff !important; /* Force White text on dark sidebar */
+}
+
+/* Sidebar Text - Light for dark background */
+[data-testid="stSidebar"] h1, 
+[data-testid="stSidebar"] h2, 
+[data-testid="stSidebar"] h3, 
+[data-testid="stSidebar"] label, 
+[data-testid="stSidebar"] div,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] p {
+    color: #f8fafc !important; 
+}
+
+/* Sidebar Navigation */
+[data-testid="stSidebarNav"] div[role="radiogroup"] label {
+    color: #cbd5e1 !important;
+    background-color: transparent;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+    padding-left: 12px;
+    border-left: 3px solid transparent;
+}
+
+[data-testid="stSidebarNav"] div[role="radiogroup"] label:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white !important;
+    border-left-color: var(--accent);
+}
+
+/* Selected State workaround if possible, otherwise hover covers it */
+
+/* --- Metric Cards (Marble Tile Look) --- */
+.metric-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px; /* Minimal rounding */
+    padding: 1.5rem;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.metric-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Feature Cards */
+.feature-card {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--background), #fff);
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 1rem auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.feature-card h3 {
+    color: var(--primary); /* Dark Brown */
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: var(--primary-light); /* Lighter Brown */
+    font-size: 0.95rem;
+}
+
+.metric-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+}
+
+.metric-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* --- Tables & Grids --- */
+div[data-testid="stDataFrame"] {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    box-shadow: var(--shadow-soft);
+    background: white;
+}
+
+div[data-testid="stDataFrame"] th {
+    font-family: 'Playfair Display', serif !important;
+    color: var(--primary) !important;
+    font-size: 1rem !important;
+    background-color: #f8fafc !important;
+}
+
+/* --- Buttons --- */
+.stButton > button {
+    background-color: var(--primary);
+    color: #ffffff;
+    border: 1px solid var(--primary);
+    border-radius: 2px; /* Sharp */
+    padding: 0.6rem 1.5rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.stButton > button:hover {
+    background-color: white;
+    color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Secondary Button Style (if needed, usually Streamlit has one main type) */
+
+/* --- Inputs --- */
+.stTextInput > div > div > input,
+.stNumberInput > div > div > input, 
+.stSelectbox > div > div > div,
+.stTextArea > div > div > textarea {
+    background-color: #ffffff;
+    color: var(--primary);
+    border: 1px solid #cbd5e1;
+    border-radius: 2px;
+    font-family: 'Lato', sans-serif;
+}
+
+.stTextInput > div > div > input:focus,
+.stNumberInput > div > div > input:focus,
+.stTextArea > div > div > textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent);
+}
+
+/* --- Toasts --- */
+.stToast {
+    background: white;
+    color: var(--primary);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    box-shadow: var(--shadow-hover);
+    font-family: 'Lato', sans-serif;
+}
+
+/* --- Tile Card (Custom Component) --- */
+.tile-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tile-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+    border-color: var(--accent);
+}
+
+.tile-img-placeholder {
+    height: 140px;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-size: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Marble Texture Effect via CSS */
+.tile-img-placeholder::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: 
+        radial-gradient(#cbd5e1 1px, transparent 1px),
+        radial-gradient(#cbd5e1 1px, transparent 1px);
+    background-position: 0 0, 25px 25px;
+    background-size: 50px 50px;
+    opacity: 0.3;
+    transform: rotate(30deg);
+}
+
+.tile-content {
+    padding: 1rem;
+    flex-grow: 1;
+}
+
+.tile-header {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tile-sub {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.tile-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.tile-price {
+    color: var(--accent);
+}
+
+.tile-stock {
+    background: #f1f5f9;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.tile-stock.low {
+    background: #fef2f2;
+    color: #ef4444;
+}
+
+
+/* Professional Home Page Styling */
+.hero-container {
+    padding: 3rem;
+    border-radius: 12px;
+    /* Charcoal Gradient for High Contrast */
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    margin-bottom: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(73, 49, 41, 0.2);
+    color: var(--background); /* Peach/White Text */
+}
+
+.shop-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--background); /* Ivory */
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.shop-subtitle {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.25rem;
+    color: #e2e8f0; /* Light Gray */
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+
+
+.search-container {
+    margin-top: 2rem;
+    padding: 2.5rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+}
+
+/* Logo Resize */
+[data-testid="stSidebar"] img {
+    max-width: 150px !important;
+    margin: 0 auto;
+    display: block;
+}

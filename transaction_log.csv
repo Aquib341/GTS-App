@@ -1,0 +1,21 @@
+Timestamp,Design_No,Transaction_Type,Quantity_Changed,New_Stock,User,Reason
+2026-02-07 04:30:49,017 -WALL TILES- 12*18 (F),Update,1,8.0,Admin,Purchase
+2026-02-07 04:30:56,017 -WALL TILES- 12*18 (F),Update,1,9.0,Admin,Purchase
+2026-02-07 05:08:56,017 -WALL TILES- 12*18 (F),Update,2,11.0,Admin,Purchase
+2026-02-07 05:09:07,017 -WALL TILES- 12*18 (F),Update,2,13.0,Admin,Purchase
+2026-02-07 05:09:16,017 -WALL TILES- 12*18 (F),Update,2,15.0,Admin,Purchase
+2026-02-07 05:09:21,017 -WALL TILES- 12*18 (F),Update,2,17.0,Admin,Purchase
+2026-02-07 05:09:25,017 -WALL TILES- 12*18 (F),Update,2,19.0,Admin,Purchase
+2026-02-07 05:13:20,017 -WALL TILES- 12*18 (F),Update,2,21.0,Admin,Purchase
+2026-02-07 05:13:31,017 -WALL TILES- 12*18 (F),Update,2,23.0,Admin,Purchase
+2026-02-07 05:14:30,10003 -WALL TILES- 12*18 (HL-2),Update,-2,24.0,Admin,Sale
+2026-02-07 05:15:30,10003 -WALL TILES- 12*18 (HL-2),Update,-2,22.0,Admin,Sale
+2026-02-07 05:15:35,10003 -WALL TILES- 12*18 (HL-2),Update,-2,20.0,Admin,Sale
+2026-02-07 05:15:39,10003 -WALL TILES- 12*18 (HL-2),Update,-2,18.0,Admin,Sale
+2026-02-07 05:15:44,10003 -WALL TILES- 12*18 (HL-2),Update,-2,16.0,Admin,Sale
+2026-02-07 05:15:48,10003 -WALL TILES- 12*18 (HL-2),Update,-2,14.0,Admin,Sale
+2026-02-07 05:21:18,017 -WALL TILES- 12*18 (F),Update,-12,11.0,Admin,Sale
+2026-02-07 15:34:03,017 -WALL TILES- 12*18 (F),Update,-1,10.0,Admin,Sale
+2026-02-07 15:55:31,017 -WALL TILES- 12*18 (F),Update,-2,8.0,Admin,Sale
+2026-02-07 16:10:04,1012 HL-1,Update,-2,46.0,Admin,Sale
+2026-02-07 18:50:40,017 -WALL TILES- 12*18 (F),Update,1,9.0,Admin,Purchase
