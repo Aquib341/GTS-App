@@ -1,6 +1,6 @@
-# StockSphere: Smart Inventory & Billing Dashboard 📦
+# GTS: Smart Inventory & Billing Dashboard 📦
 
-**StockSphere** is a production-ready, mobile-first inventory management and point-of-sale (POS) dashboard built with Python and Streamlit. It is designed to modernize retail shop operations (like "Govind Tiles & Sanitary") by providing real-time stock tracking, data analytics, invoice generation, and seamless synchronization with Google Sheets as a database backend.
+**GTS** is a production-ready, mobile-first inventory management and point-of-sale (POS) dashboard built with Python and Streamlit. It is designed to modernize retail shop operations (like "Govind Tiles & Sanitary") by providing real-time stock tracking, data analytics, invoice generation, and seamless synchronization with Google Sheets as a database backend.
 
 ## 🌟 Key Features
 
